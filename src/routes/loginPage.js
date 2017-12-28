@@ -10,16 +10,18 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+    this.dispatch = this.props.dispatch;
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('收到值: ', values);
+        this.dispatch({type: 'login/login'});
       }
     });
-  }
+  };
 
   render() {
     const {getFieldDecorator} = this.props.form;
