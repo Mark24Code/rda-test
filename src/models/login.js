@@ -20,8 +20,13 @@ export default {
     },
     *login({payload:user_data}, {call, put}){
       console.log('effces 收到:', user_data);
-      const data = yield call(LOGIN,user_data);
-      console.log('effects获取到：',JSON.stringify(data));
+      const resp = yield call(LOGIN,user_data);
+      const data = resp.data;
+      console.log('effects获取到：',resp);
+      console.log('effects获取到：',data);
+      if(data.user_token && data.user_token!==''){
+        localStorage.setItem('user_token', data.user_token);
+      }
     },
   },
 
@@ -29,6 +34,11 @@ export default {
     save(state, action) {
       return {...state, ...action.payload};
     },
+    set_token(state,action){
+
+    }
+
+
   },
 
 };
