@@ -18,7 +18,7 @@ class LoginPage extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('收到值: ', values);
-        this.dispatch({type: 'login/login'});
+        this.dispatch({type: 'login/login',payload:values});
       }
     });
   };
