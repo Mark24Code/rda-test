@@ -21,7 +21,7 @@ export default {
     *login({ payload }, { call, put }){
       console.log('effces 收到');
       const data = yield call(userLogin);
-      console.log(`Effects :${data}`);
+      console.log(`Effects :${JSON.stringify(data)}`);
     },
   },
 
