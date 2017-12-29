@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'dva';
 import {Row, Col, Form, Icon, Input, Button, Checkbox} from 'antd';
-import styles from './LoginPage.css';
+import styles from './LoginPage.scss';
 
 const FormItem = Form.Item;
 
@@ -26,9 +26,13 @@ class LoginPage extends React.Component {
   render() {
     const {getFieldDecorator} = this.props.form;
     return (
-      <div>
+      <div className={styles.form}>
+        <div className={styles.logo}>
+          {/*<img alt={'logo'} src={config.logo} />*/}
+          <span >AdminSystem</span>
+        </div>
         <Row type="flex" justify="center">
-          <Col span={8}>
+          <Col span={20}>
             <Form onSubmit={this.handleSubmit}>
               <FormItem>
                 {getFieldDecorator('username', {

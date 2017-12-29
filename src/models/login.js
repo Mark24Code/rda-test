@@ -1,4 +1,4 @@
-// import {userLogin} from '../services/login';
+import {userLogin} from '../services/login';
 
 export default {
 
@@ -10,8 +10,8 @@ export default {
   },
 
   subscriptions: {
-    setup({ dispatch, history }) {  // eslint-disable-line
-    },
+    // setup({ dispatch, history }) {  // eslint-disable-line
+    // },
   },
 
   effects: {
@@ -20,8 +20,8 @@ export default {
     },
     *login({ payload }, { call, put }){
       console.log('effces 收到');
-      // const data = yield call(userLogin);
-      // console.log(`Effects :${data}`);
+      const data = yield call(userLogin);
+      console.log(`Effects :${data}`);
     },
   },
 

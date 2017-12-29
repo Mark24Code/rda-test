@@ -1,16 +1,16 @@
 import dva from 'dva';
 import 'antd/dist/antd.css';
-import { message } from 'antd';
+import {message} from 'antd';
 import createHistory from 'history/createBrowserHistory';
 import createLoading from 'dva-loading';
 import './index.css';
 
 // 1. Initialize
 const app = dva({
-    // history: createHistory(),
-    onError (error) {
-        message.error(error.message)
-    },
+  // history: createHistory(),
+  onError (error) {
+    message.error(error.message)
+  },
 });
 
 // 2. Plugins
